@@ -1,0 +1,15 @@
+flask
+pillow
+requests[socks]
+wand
+rethinkdb==2.3.0.post6
+requests_oauthlib
+sentry_sdk
+blinker
+moviepy
+redis
+numpy
+keras
+scipy
+gevent
+tensorflow

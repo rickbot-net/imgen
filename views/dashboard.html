@@ -1,0 +1,34 @@
+<head>
+  {% include "partials/header.html" %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="content">
+    {% include "partials/navbar.html" %}
+    <div style="margin-top: 50px;" class="flex">
+      <h1 class="welcome">Welcome {{ name }}</h1>
+      {% if admin %}
+        <a class="button" href="/admin">Admin Dashboard</a>
+      {% endif %}
+    </div>
+    <div class="flex flex-row">
+      <h3 style="display: inline;">Applications</h3>
+      <a class="button" href="/request">Request New</a>
+    </div>
+    <hr>
+    <div class="flex flex-rox">
+    {% for key in keys %}
+      <div class="app-card" style="width: 300px;">
+          <h2 class="app-title">{{ key['name'] }}</h2>
+          <footer style="justify-content: left; margin-top: 1rem;" class="flex flex-row">
+            <a class="app-view" href="/view/{{ key['id'] }}">View</a>
+            <a class="unlimited" href="#" onclick="navigator.clipboard.writeText('{{ key['id'] }}')">Copy Token</a>
+            <a class="app-decline" href="delete/{{ key['id'] }}">Delete</a>
+          </footer>
+        </div>
+    {% endfor %}
+  </div>
+  </div>
+<script src="assets/dashboard.js"></script>
+</body>

@@ -1,0 +1,36 @@
+<head>
+  {% include "partials/header.html" %}
+</head>
+
+<body>
+  <div class="content">
+    {% include "partials/navbar.html" %}
+      <form action="?" method="POST">
+        <div style="margin-top: 50px;" class="form">
+          <label for="name">Bot Name:</label>
+          <input required type="text" id="name" name="name" placeholder="Your Bot">
+          <label for="description">Bot Description: </label>
+          <textarea required id="description" name="description" placeholder="Tell us a bit about what your bot does!"></textarea>
+          <label for="link">Bot Link:</label>
+          <input required type="text" id="link" name="link" placeholder="Give us a link or resource where we can learn a bit more about your bot">
+          <label for="link">Server Count:</label>
+          <input required type="text" id="servers" name="servers" placeholder="How many servers is your bot in?">
+          <label for="type">Bot Type:</label>
+          <select required name="type" id="type">
+              <option value="discord">Discord Bot</option>
+              <option value="slack">Slack Bot</option>
+              <option value="telegram">Telegram bot</option>
+              <option value="twitter">Twitter bot</option>
+              <option value="other">Other</option>
+          </select>
+          <label for="reason">Why do you want access to our API?</label>
+          <textarea required id="reason" name="reason" placeholder="Note: Please put some actual effort into your application. Low effort applications will be declined."></textarea>
+          <label for="tos">Do you agree to our TOS and Privacy Policy?</label>
+          <input required type="checkbox" id="tos" name="tos">
+          <label for="consent">Do you allow us to e-mail you about your application status?</label>
+          <input type="checkbox" id="consent" name="consent">
+          <input style="cursor: pointer" type="submit" value="Request API Key">
+        </div>
+      </form>
+  </div>
+</body>
