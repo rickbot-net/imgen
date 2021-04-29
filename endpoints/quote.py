@@ -37,8 +37,6 @@ class Quote(Endpoint):
         words = Image.new('RGBA', base.size)
         canvas = ImageDraw.Draw(words)
 
-        if(color == 0) color = 'White'
-
         # render_text_with_emoji(base, canvas, (230, 70), usernames[0], font=font_med, fill='White')
         if color == 0:
             color = 'White'
