@@ -11,9 +11,9 @@ from utils.textutils import render_text_with_emoji
 
 @setup
 class Quote(Endpoint):
-    params = ['avatar0', 'username0', 'text', 'color']
+    params = ['avatar0', 'username0', 'text']
 
-    def generate(self, avatars, text, usernames, color, kwargs):
+    def generate(self, avatars, text, usernames, kwargs):
         avatar = http.get_image(avatars[0]).resize((150, 150))
         base = Image.new('RGBA', (1500, 300))
         font_med = self.assets.get_font('assets/fonts/medium.woff', size=60)
@@ -37,10 +37,7 @@ class Quote(Endpoint):
         words = Image.new('RGBA', base.size)
         canvas = ImageDraw.Draw(words)
 
-        # render_text_with_emoji(base, canvas, (230, 70), usernames[0], font=font_med, fill='White')
-        if color == 0:
-            color = 'White'
-        render_text_with_emoji(base, canvas, (230, 70), usernames[0], font=font_med, fill=color)
+        render_text_with_emoji(base, canvas, (230, 70), usernames[0], font=font_med, fill='White')
         render_text_with_emoji(base, canvas, (230, 150), text, font=font_sb, fill=(160, 160, 160))
 
         timestamp_left = 230 + canvas.textsize(usernames[0], font=font_med)[0] + 20
