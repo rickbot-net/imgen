@@ -14,7 +14,7 @@ from time import time
 
 @setup
 class Profile(Endpoint):
-    """Note: This endpoint is only accessible to Dank Memer. Do NOT implement this!"""
+    """Note: This endpoint is only accessible to RickBot. Do NOT implement this!"""
     params = ['avatar0', 'username1', 'bio', 'title', 'level', 'xp', 'total_xp', 'color', 'bank', 'wallet', 'inventory', 'prestige', 'active_effects', 'command', 'streak', 'multiplier']
 
     def generate(self, avatars, text, usernames, kwargs):

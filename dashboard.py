@@ -2,7 +2,8 @@ import hashlib
 import json
 from random import randint
 
-import rethinkdb as r
+# import rethinkdb as r
+from rethinkdb import RethinkDB; r = RethinkDB()
 from flask import render_template, request, Blueprint, url_for, session, redirect
 
 from utils.db import get_db

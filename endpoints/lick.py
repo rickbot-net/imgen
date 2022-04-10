@@ -14,7 +14,7 @@ class Lick(Endpoint):
     def generate(self, avatars, text, usernames, kwargs):
         text = text.replace(', ', ',').split(',')
         if len(text) != 2:
-            text = ['Dank Memer', 'People who do not split with a comma']
+            text = ['RickBot', 'People who do not split with a comma']
         base = Image.open(self.assets.get('assets/lick/lick.jpg'))
         font = self.assets.get_font('assets/fonts/verdana.ttf', size=24)
         canv = ImageDraw.Draw(base)

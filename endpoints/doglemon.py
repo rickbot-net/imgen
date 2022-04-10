@@ -19,7 +19,7 @@ class DogLemon(Endpoint):
             lemon, dog = text.replace(' ,', ',', 1).split(',', 1)
         except ValueError:
             lemon = 'Text that is not seperated by comma'
-            dog = 'Dank Memer'
+            dog = 'RickBot'
         lemon = wrap(font, lemon, 450)
         dog = wrap(font, dog, 450)
         render_text_with_emoji(base, canv, (850, 100), lemon[:180], font=font, fill='Black')
