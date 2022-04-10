@@ -5,7 +5,8 @@ except ImportError:
 from datetime import datetime, timedelta
 from time import time
 import requests
-import rethinkdb as r
+# import rethinkdb as r # Old way of doing this
+from rethinkdb import RethinkDB; r = RethinkDB()
 from flask import request, make_response, jsonify
 
 from utils.db import get_db, get_redis

@@ -2,7 +2,7 @@ import hashlib
 import json
 from random import randint
 
-# import rethinkdb as r
+# import rethinkdb as r # Old way of doing this
 from rethinkdb import RethinkDB; r = RethinkDB()
 from flask import render_template, request, Blueprint, url_for, session, redirect
 

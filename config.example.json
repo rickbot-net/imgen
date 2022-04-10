@@ -1,0 +1,14 @@
+{
+  "client_id": "699724677341380720",
+  "client_secret": "Sex-client.secret.here",
+  "admins": ["175589848982355978", "188418994527535104", "186571646453284864"],
+  "rdb_address": "localhost",
+  "rdb_port": 28015,
+  "rdb_db": "meme",
+
+
+  "redis_password": "",
+  "redis_address": "localhost",
+  "redis_port": 6379,
+  "redis_db": 1
+}

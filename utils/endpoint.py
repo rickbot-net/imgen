@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from time import perf_counter
 
-import rethinkdb as r
+# import rethinkdb as r # Old way of doing this
+from rethinkdb import RethinkDB; r = RethinkDB()
 
 from utils import fixedlist
 from utils.db import get_db, get_redis

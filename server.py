@@ -9,7 +9,8 @@ import os
 import threading
 import traceback
 
-import rethinkdb as r
+# import rethinkdb as r # Old way of doing this
+from rethinkdb import RethinkDB; r = RethinkDB()
 from flask import Flask, render_template, request, g, jsonify, make_response
 
 from dashboard import dash

@@ -3,7 +3,7 @@ try:
 except ImportError:
     import json
 
-# import rethinkdb as r
+# import rethinkdb as r # Old way of doing this
 from rethinkdb import RethinkDB; r = RethinkDB()
 import redis
 from flask import g
