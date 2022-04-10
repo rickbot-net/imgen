@@ -9,6 +9,9 @@ cd imgen
 
 The core will stay the same, I'm only updating old stuff here (:
 
+# ImageMagick installation
+
+read more at [imagemagick.org](https://imagemagick.org/script/download.php)
 
 # RethinkDB settings
 - Create DB called "meme"
@@ -36,5 +39,3 @@ The core will stay the same, I'm only updating old stuff here (:
   "rdb_db": "meme"
 }
 ```
-
-
