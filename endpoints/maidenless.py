@@ -18,7 +18,7 @@ class Maidenless(Endpoint):
         base = Image.open(self.assets.get('assets/maidenless/noBitches.png'))
         font = self.assets.get_font('assets/fonts/impact.ttf', size=50)
         canv = ImageDraw.Draw(base)
-        render_text_with_emoji(base, canv, (155, 7), wrap(font, "lolololo", 220), font, 'white')
+        render_text_with_emoji(base, canv, (155, 7), wrap(font, text, 220), font, 'white')
 
         base = base.convert('RGB')
         b = BytesIO()
