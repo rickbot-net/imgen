@@ -79,7 +79,7 @@ class RatelimitCache(object):
 globalcache = RatelimitCache(expire_time=timedelta(0, 60, 0))
 
 
-def ratelimit(func, cache=globalcache, max_usage=300):
+def ratelimit(func, cache=globalcache, max_usage=config.get("max_usage")):
     def wrapper(*args, **kwargs):
         auth = request.headers.get('authorization', None)
         key = r.table('keys').get(auth).run(get_db())
@@ -87,7 +87,7 @@ def ratelimit(func, cache=globalcache, max_usage=300):
             return make_response(
                 (*func(*args, **kwargs), {'X-Global-RateLimit-Limit': 'Unlimited',
                                           'X-Global-RateLimit-Remaining': 'Unlimited',
-                                          'X-Global-RateLimit-Reset': 2147483647}))
+                                          'X-Global-RateLimit-Reset': 2147483647 })) # 2147483647 = Tuesday, January 19, 2038 3:14:07 AM
         if key['id'] in cache:
             usage = cache.get(key['id'])
             if usage < max_usage:

@@ -22,7 +22,12 @@ from sentry_sdk import capture_exception
 
 # Initial require, the above line contains our endpoints.
 
-config = json.load(open('config.json'))
+try:
+    config = json.load(open('config.json'))
+except FileNotFoundError:
+    print("Can not find config.json, please create one before runing again.")
+    exit(0)
+
 endpoints = None
 
 app = Flask(__name__, template_folder='views', static_folder='views/assets')
